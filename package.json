@@ -1,15 +1,22 @@
 {
-  "name": "main",
+  "name": "employee-tracker-sql",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanmgrant/Employee-Tracker-SQL.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/seanmgrant/Employee-Tracker-SQL/issues"
+  },
+  "homepage": "https://github.com/seanmgrant/Employee-Tracker-SQL#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^9.1.4",
