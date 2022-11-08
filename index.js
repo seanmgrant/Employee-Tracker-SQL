@@ -481,7 +481,7 @@ employeeDepartment = () => {
                  LEFT JOIN roles ON employees.role_id = roles.id 
                  LEFT JOIN department ON roles.department_id = department.id`;
 
-    connection..query(sql, (err, rows) => {
+    connection.query(sql, (err, rows) => {
         if (err) throw err;
         console.table(rows);
         firstPrompt();
