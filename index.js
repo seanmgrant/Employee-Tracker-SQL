@@ -209,7 +209,7 @@ addRole = () => {
             name: 'salary',
             message: "What is the salary of this role?",
             validate: addSalary => {
-                if (isNaN(addSalary)) {
+                if (addSalary) {
                     return true;
                 } else {
                     console.log('Please enter a salary');
@@ -222,7 +222,7 @@ addRole = () => {
             const params = [answer.role, answer.salary];
 
             // grab dept from department table
-            const roleSql = `SELECT name, id FROM department`;
+            const roleSql = `SELECT department_name, id FROM department`;
 
             connection.query(roleSql, (err, data) => {
                 if (err) throw err;
