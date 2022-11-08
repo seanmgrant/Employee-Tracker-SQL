@@ -591,7 +591,7 @@ viewBudget = () => {
     department.department_name AS department,
                         SUM(salary) AS budget
                  FROM  roles  
-                 JOIN department ON rolesnode .department_id = department.id GROUP BY  department_id`;
+                 JOIN department ON roles.department_id = department.id GROUP BY  department_id`;
 
     connection.query(sql, (err, rows) => {
         if (err) throw err;
