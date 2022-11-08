@@ -209,7 +209,7 @@ addRole = () => {
             name: 'salary',
             message: "What is the salary of this role?",
             validate: addSalary => {
-                if (isNAN(addSalary)) {
+                if (isNaN(addSalary)) {
                     return true;
                 } else {
                     console.log('Please enter a salary');
@@ -224,7 +224,7 @@ addRole = () => {
             // grab dept from department table
             const roleSql = `SELECT name, id FROM department`;
 
-            connection.promise().query(roleSql, (err, data) => {
+            connection.query(roleSql, (err, data) => {
                 if (err) throw err;
 
                 const dept = data.map(({ name, id }) => ({ name: name, value: id }));
@@ -291,7 +291,7 @@ addEmployee = () => {
             // grab roles from roles table
             const roleSql = `SELECT roles.id, roles.title FROM roles`;
 
-            connection.promise().query(roleSql, (err, data) => {
+            connection.query(roleSql, (err, data) => {
                 if (err) throw err;
 
                 const roles = data.map(({ id, title }) => ({ name: title, value: id }));
@@ -310,7 +310,7 @@ addEmployee = () => {
 
                         const managerSql = `SELECT * FROM employees`;
 
-                        connection.promise().query(managerSql, (err, data) => {
+                        connection.query(managerSql, (err, data) => {
                             if (err) throw err;
 
                             const managers = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
@@ -350,7 +350,7 @@ updateEmployee = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employees`;
 
-    connection.promise().query(employeeSql, (err, data) => {
+    connection.query(employeeSql, (err, data) => {
         if (err) throw err;
 
         const employees = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
