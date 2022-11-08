@@ -370,7 +370,7 @@ updateEmployee = () => {
 
                 const roleSql = `SELECT * FROM roles`;
 
-                connection.promise().query(roleSql, (err, data) => {
+                connection.query(roleSql, (err, data) => {
                     if (err) throw err;
 
                     const roles = data.map(({ id, title }) => ({ name: title, value: id }));
@@ -413,7 +413,7 @@ updateManager = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employees`;
 
-    connection.promise().query(employeeSql, (err, data) => {
+    connection.query(employeeSql, (err, data) => {
         if (err) throw err;
 
         const employees = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
@@ -433,7 +433,7 @@ updateManager = () => {
 
                 const managerSql = `SELECT * FROM employees`;
 
-                connection.promise().query(managerSql, (err, data) => {
+                connection.query(managerSql, (err, data) => {
                     if (err) throw err;
 
                     const managers = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
@@ -481,7 +481,7 @@ employeeDepartment = () => {
                  LEFT JOIN roles ON employees.role_id = roles.id 
                  LEFT JOIN department ON roles.department_id = department.id`;
 
-    connection.promise().query(sql, (err, rows) => {
+    connection..query(sql, (err, rows) => {
         if (err) throw err;
         console.table(rows);
         firstPrompt();
@@ -492,7 +492,7 @@ employeeDepartment = () => {
 deleteDepartment = () => {
     const deptSql = `SELECT * FROM department`;
 
-    connection.promise().query(deptSql, (err, data) => {
+    connection.query(deptSql, (err, data) => {
         if (err) throw err;
 
         const dept = data.map(({ name, id }) => ({ name: name, value: id }));
@@ -523,7 +523,7 @@ deleteDepartment = () => {
 deleteRole = () => {
     const roleSql = `SELECT * FROM roles`;
 
-    connection.promise().query(roleSql, (err, data) => {
+    connection.query(roleSql, (err, data) => {
         if (err) throw err;
 
         const role = data.map(({ title, id }) => ({ name: title, value: id }));
@@ -555,7 +555,7 @@ deleteEmployee = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employees`;
 
-    connection.promise().query(employeeSql, (err, data) => {
+    connection.query(employeeSql, (err, data) => {
         if (err) throw err;
 
         const employees = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
@@ -593,7 +593,7 @@ viewBudget = () => {
                  FROM  roles  
                  JOIN department ON rolesnode .department_id = department.id GROUP BY  department_id`;
 
-    connection.promise().query(sql, (err, rows) => {
+    connection.query(sql, (err, rows) => {
         if (err) throw err;
         console.table(rows);
 
