@@ -22,7 +22,7 @@ View MYSQL database by running for `mysql -uroot` or ` mysql -u root -p`.
 
 
 
-Here is a video walk throught 
+[Here's a video walk throught](https://drive.google.com/file/d/1VxphRUM2jYNZ0AVu1jPJ_E5gN5ayakGg/view?usp=sharing)
 
 
 
